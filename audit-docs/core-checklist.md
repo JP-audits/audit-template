@@ -59,7 +59,7 @@
   - [ ] CEI pattern check [Reference](https://solodit.xyz/issues/3560) ???
   - [ ] Complicated path exploit [Reference](https://solodit.xyz/issues/3383) ???
 
-- [ ] **Front-run**
+- [ ] **Front-run** ***
   - [ ] Get or Create - This kind of work is very likely to have vulnerability to frontrunning
   - [ ] Two-transaction actions should be safe from frontrunning - A good example is when the protocol depends on the user's approval to take the token [Reference](https://github.com/sherlock-audit/2022-11-isomorph-judging/issues/47)
   - [ ] Make other's call revert by calling first with dust [Reference](https://solodit.xyz/issues/5920)
@@ -68,7 +68,7 @@
   - [ ] Transaction while reassignment - Best practice - do not require an index as a parameter
   - [ ] Summing vs separate calculation [Reference](https://github.com/sherlock-audit/2022-11-isomorph-judging/issues
 
-- [ ] **Defi**
+- [ ] **Defi**_
   - [ ] Oracle: Usage of deprecated chainlink functions - latestRoundData() might return stale or incorrect results [Reference](https://github.com/code-423n4/2022-04-backd-findings/issues/17)
   - [ ] Oracle: twap period - Oracle's period is very low allowing the twap price to be manipulated [Reference](https://github.com/code-423n4/2022-06-canto-v2-findings/issues/124)
   - [ ] Hard-coded slippage - Hard-coded slippage may freeze user funds during market turbulence [Reference](https://github.com/code-423n4/2022-05-sturdy-findings/issues/133)
@@ -82,7 +82,7 @@
   - [ ] Liquidation should work after frontrunning by borrower - liqAmount might be decreased by borrower using frontrunning [Reference](https://solodit.xyz/issues/7364)
   - [ ] Defi functions should have deadline like Uniswap [Reference](https://solodit.xyz/issues/6687)
 
-- [ ] ** # Flashloan # ** 
+- [ ] **Flashloan** 
   - [ ] Checkpoint faking - OpenZepplin checkpoint works with block number that can be faked with flashloan
   - [ ] Disable withdraw in the same block
   - [ ] ERC4626 flashloan manipulation [Reference](https://github.com/code-423n4/2022-01-behodler-findings/issues/304)
