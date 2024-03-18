@@ -20,9 +20,9 @@
 
 - [ ] **Validation**
   - [ ] Min/Max validation - Check if parameters are capped correctly [Reference](https://solodit.xyz/issues/3591)
-  - [ ] Time validation
-  - [ ] Zero input, double call validation
-  - [ ] Calling multiple times - Calling a function X times with value Y == Calling it once with value XY
+  - [ ] Time validation [Reference](https://solodit.xyz/issues/lack-of-end-time-validation-leads-to-wrong-market-index-calculation-on-the-new-markets-halborn-none-moonwell-finance-contracts-v2-updates-security-assessment-pdf)
+  - [ ] Zero input, double call validation ?
+  - [ ] Calling multiple times - Calling a function X times with value Y == Calling it once with value XY ?
   - [ ] src==dst - Check what happens if an action is done to itself
   - [ ] don't check min threshold during withdrawal - Users wouldn't withdraw dust [Reference](https://solodit.xyz/issues/5912)
   - [ ] Don't use Address.isContract() for EOA checking [Reference](https://solodit.xyz/issues/5925)
@@ -35,16 +35,16 @@
 - [ ] **Denial Of Service (DOS)**
   - [ ] Withdraw check - Follow Withdraw-Pattern for the best practice [Reference](https://solodit.xyz/issues/2939)
   - [ ] External contracts interaction - Make sure the protocol is not affected when the external dependencies do not work [Reference](https://solodit.xyz/issues/2967)
-  - [ ] Minimum transaction amount - Disallow zero amount transactions to prevent attackers putting enormous requests [Reference](https://solodit.xyz/issues/1516)
-  - [ ] Tokens with blacklisting - USDC
-  - [ ] Forcing protocol to go through a list - e.g. queue of dust withdrawals
-  - [ ] Possible DOS with low decimal tokens - The process wouldn't work because the token amount is 0 when it should work [Reference](https://solodit.xyz/issues/6998)
-  - [ ] Check overflow during multiply [Reference](https://solodit.xyz/issues/6854)
-  - [ ] Use unchecked for TickMath, FullMath from uniswap - These libraries of uniswap use version 0.7.6 [Reference](https://solodit.xyz/issues/6879)
+  - [ ] Minimum transaction amount - Disallow zero amount transactions to prevent attackers putting enormous requests [Reference](https://solodit.xyz/issues/1516) ???
+  - [ ] Tokens with blacklisting, such as USDC [Reference](https://solodit.xyz/issues/m-6-if-the-recipient-is-added-to-the-usdc-blacklist-then-cancel-does-not-work-sherlock-nouns-nounsdao-git)
+  - [ ] Forcing protocol to go through a list - e.g. queue of dust withdrawals ???
+  - [ ] Possible DOS with low decimal tokens - The process wouldn't work because the token amount is 0 when it should work [Reference](https://solodit.xyz/issues/6998) ???
+  - [ ] Check overflow during multiply [Reference](https://solodit.xyz/issues/6854) 
+  - [ ] Use unchecked for TickMath, FullMath from uniswap - These libraries of uniswap use version 0.7.6 [Reference](https://solodit.xyz/issues/6879) ???
 
 - [ ] **Gas limit**
   - [ ] Active draining gas - An attacker can drain gas and leave very little to prevent future processing [Reference](https://solodit.xyz/issues/3709)
-  - [ ] Long loop - Loop without a start index [Reference](https://github.com/sherlock-audit/2022-11-isomorph-judging/issues/69)
+  - [ ] Long loop - Loop without a start index [Reference](https://github.com/sherlock-audit/2022-11-isomorph-judging/issues/69) ???
 
 - [ ] **Replay Attack**
   - [ ] Failed TXs are open to replay attacks [Reference](https://github.com/code-423n4/2022-03-rolla-findings/issues/45)
@@ -53,10 +53,11 @@
 - [ ] **Pause/Unpause**
   - [ ] Users can't cancel/withdraw when paused
   - [ ] Users can't avoid paying penalty(interest) when paused
+  - [ ] Key functions missing Pause/UnPause modifier
 
 - [ ] **Re-entrancy**
-  - [ ] CEI pattern check [Reference](https://solodit.xyz/issues/3560)
-  - [ ] Complicated path exploit [Reference](https://solodit.xyz/issues/3383)
+  - [ ] CEI pattern check [Reference](https://solodit.xyz/issues/3560) ???
+  - [ ] Complicated path exploit [Reference](https://solodit.xyz/issues/3383) ???
 
 - [ ] **Front-run**
   - [ ] Get or Create - This kind of work is very likely to have vulnerability to frontrunning
@@ -81,7 +82,7 @@
   - [ ] Liquidation should work after frontrunning by borrower - liqAmount might be decreased by borrower using frontrunning [Reference](https://solodit.xyz/issues/7364)
   - [ ] Defi functions should have deadline like Uniswap [Reference](https://solodit.xyz/issues/6687)
 
-- [ ] **Flashloan**
+- [ ] ** # Flashloan # ** 
   - [ ] Checkpoint faking - OpenZepplin checkpoint works with block number that can be faked with flashloan
   - [ ] Disable withdraw in the same block
   - [ ] ERC4626 flashloan manipulation [Reference](https://github.com/code-423n4/2022-01-behodler-findings/issues/304)
